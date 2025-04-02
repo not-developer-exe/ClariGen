@@ -12,7 +12,7 @@ const App = () => {
       <Home/> 
 
       <div className='text-xl text-gray-400 text-sm'>
-        <p>Powered by @ClariGenAI</p>
+        <p className='text-sm mt-4'>Powered by @ClariGenAI</p>
       </div>
     </div>
   )
