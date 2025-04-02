@@ -1,14 +1,27 @@
-import React from 'react'
+import React from "react";
 
-const ImageUpload = () => {
+const ImageUpload = (props) => {
+  const showImageHandler = (e) =>{
+    const file =  e.target.files[0]
+    if(file){
+      props.uploadImageHandler(file) 
+    }
+  } 
+
+  
   return (
-    <div className='bg-white shadow-xl rounded-2xl py-3 px-4 w-full max-w-md'>
-        <label htmlFor="fileInput" className='block full cursor-pointer border-2 border-dashed border-gray-300 rounded-lg px-4 py-3 text-center hover:border-blue-400 trasnition duration-300 ease-in-out'>
-            <input type="file" id="fileInput"className='hidden' />
-            <span className='text-md font-medium text-gray-500'>Upload your image here.</span>
-        </label>
+    <div className="bg-white shadow-xl rounded-2xl py-3 px-4 w-full max-w-md">
+      <label
+        htmlFor="fileInput"
+        className="block full cursor-pointer border-2 border-dashed border-gray-300 rounded-lg px-4 py-3 text-center hover:border-blue-400 trasnition duration-300 ease-in-out"
+      >
+        <input type="file" id="fileInput" className="hidden" onChange={showImageHandler}/>
+        <span className="text-md font-medium text-gray-500">
+          Upload your image here.
+        </span>
+      </label>
     </div>
-  )
-}
+  );
+};
 
-export default ImageUpload
+export default ImageUpload;
